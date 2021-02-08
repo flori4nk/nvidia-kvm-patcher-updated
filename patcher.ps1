@@ -1,4 +1,4 @@
-﻿# Nvidia KVM Patcher
+# Nvidia KVM Patcher
 # SK1080
 # License: Do whatever you want with this code
 # Use at your own risk!
@@ -88,7 +88,7 @@ $inf2cat = ''
 $signtool = ''
 
 $inf2cat_paths = 'C:/Program Files (x86)/Windows Kits/10/bin/x86/Inf2Cat.exe', 'C:/Program Files (x86)/Windows Kits/10/bin/10.0.17763.0/x86/Inf2Cat.exe', 'C:/Program Files (x86)/Windows Kits/10/bin/10.0.17134.0/x86/Inf2Cat.exe', 'C:/WinDDK/7600.16385.1/bin/selfsign/Inf2Cat.exe'
-$signtool_paths = 'C:/Program Files (x86)/Windows Kits/10/Tools/bin/i386/signtool.exe', 'C:/WinDDK/7600.16385.1/bin/amd64/signtool.exe'
+$signtool_paths = 'C:\Program Files (x86)\Windows Kits\10\App Certification Kit\signtool.exe', 'C:/WinDDK/7600.16385.1/bin/amd64/signtool.exe'
 
 foreach($path in $inf2cat_paths)
 {
@@ -108,12 +108,12 @@ foreach($path in $signtool_paths)
     }
 }
 
-if(-Not(Test-Path $inf2cat))
+if([String]::IsNullOrEmpty($inf2cat) -or -Not(Test-Path $inf2cat))
 {
     Write-Host "[!] Failure: Unable to locate inf2cat, see/edit script for expected paths"
     exit
 }
-if(-Not(Test-Path $signtool))
+if([String]::IsNullOrEmpty($signtool) -or -Not(Test-Path $signtool))
 {
     Write-Host "[!] Failure: Unable to locate signtool, see/edit script for expected paths"
     exit
@@ -153,5 +153,5 @@ $ScriptPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
 Write-Host '    [+] Signing Catalog File'
 
 $catalog_path = $directory + './nv_disp.cat'
-& $signtool sign /v /n SKSoftware /t http://timestamp.verisign.com/scripts/timstamp.dll $catalog_path
-& $signtool sign /v /n SKSOftware /t http://timestamp.verisign.com/scripts/timstamp.dll $sys_unpacked
+& $signtool sign /v /n SKSoftware /t http://timestamp.comodoca.com/authenticode $catalog_path
+& $signtool sign /v /n SKSOftware /t http://timestamp.comodoca.com/authenticode $sys_unpacked
