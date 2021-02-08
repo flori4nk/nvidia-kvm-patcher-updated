@@ -1,3 +1,10 @@
+Heya, It's M.E - So I updated this in hopes it would actually bypass the Error 43 on my Windows 10VM, it didn't, but that's not to say it won't work for you.
+- I updated the Timestamp server (it apparently stopped being a thing about 7 days ago, as of this writing)
+- I also updated the location of the signtool.
+
+--------------------------------------
+
+
 Warning: This is completely unsupported and probably unmaintained. Use at your own risk! If you don't understand and accept the risks of test mode, running modified drivers, or trusting hacky patches from people on the internet, then this probably isn't the repo for you!
 
 # nvidia-kvm-patcher
