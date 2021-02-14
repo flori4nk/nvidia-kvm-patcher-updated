@@ -1,4 +1,4 @@
-﻿# Nvidia KVM Patcher
+# Nvidia KVM Patcher
 # SK1080
 # License: Do whatever you want with this code
 # Use at your own risk!
@@ -108,12 +108,12 @@ foreach($path in $signtool_paths)
     }
 }
 
-if(-Not(Test-Path $inf2cat))
+if([String]::IsNullOrEmpty($inf2cat) -or -Not(Test-Path $inf2cat))
 {
     Write-Host "[!] Failure: Unable to locate inf2cat, edit script to enter path manually"
     exit
 }
-if(-Not(Test-Path $signtool))
+if([String]::IsNullOrEmpty($signtool) -or -Not(Test-Path $signtool))
 {
     Write-Host "[!] Failure: Unable to locate signtool, edit script to enter path manually"
     exit
@@ -153,5 +153,6 @@ $ScriptPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
 Write-Host '    [+] Signing Catalog File'
 
 $catalog_path = $directory + './nv_disp.cat'
-& $signtool sign /v /n SKSoftware /t http://timestamp.verisign.com/scripts/timstamp.dll $catalog_path
-& $signtool sign /v /n SKSOftware /t http://timestamp.verisign.com/scripts/timstamp.dll $sys_unpacked
+
+& $signtool sign /v /n SKSoftware /t http://timestamp.comodoca.com/authenticode $catalog_path
+& $signtool sign /v /n SKSOftware /t http://timestamp.comodoca.com/authenticode $sys_unpacked
