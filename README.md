@@ -4,6 +4,10 @@ Warning: This is completely unsupported. Use at your own risk! If you don't unde
 
 Generic fix to NVIDIA Code 43 on Virtual Machines. This fork just merges a few fixes by the community for convenience.
 
+## Merged fixes
+- [@danbrodsky's fix](https://github.com/flori4nk/nvidia-kvm-patcher-updated/pull/1), recursive lookup for tools
+- [@MidnightEyes' fix](https://github.com/flori4nk/nvidia-kvm-patcher-updated/pull/2), use comodoca timestamp server
+
 ### Quick Instructions
 
     1. Start NVIDIA Driver Setup, Exit Before Installing (Unpacks to C:/NVIDIA, you might have to dupe the folder before exit on recent drivers as they seem to insta-nuke it)
