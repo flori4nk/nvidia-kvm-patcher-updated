@@ -1,8 +1,8 @@
-Warning: This is completely unsupported and probably unmaintained. Use at your own risk! If you don't understand and accept the risks of test mode, running modified drivers, or trusting hacky patches from people on the internet, then this probably isn't the repo for you!
+Warning: This is completely unsupported. Use at your own risk! If you don't understand and accept the risks of test mode, running modified drivers, or trusting hacky patches from people on the internet, then this probably isn't the repo for you!
 
-# nvidia-kvm-patcher
+# nvidia-kvm-patcher-updated
 
-Generic fix to NVIDIA Code 43 on Virtual Machines
+Generic fix to NVIDIA Code 43 on Virtual Machines. This fork just merges a few fixes by the community for convenience.
 
 ### Quick Instructions
 
